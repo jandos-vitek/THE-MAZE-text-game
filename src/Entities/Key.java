@@ -1,4 +1,4 @@
 package Entities;
 
-public class Key  extends Entity{
+public class Key extends Entity{
 }
