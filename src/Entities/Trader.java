@@ -1,6 +1,6 @@
 package Entities;
 
-public class HealingWell extends Entity{
+public class Trader extends Entity{
     @Override
     public String play() {
         return "";

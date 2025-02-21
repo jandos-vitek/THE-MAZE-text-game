@@ -3,25 +3,21 @@ true;false;false;true;1;0;v teto mistnosti se nachazi fialovy klic
 false;false;false;false;2;0;v teto mistnosti je truhla, na vychode jsou zelene dvere
 true;false;false;false;3;0;Tato mistnost je prazdna, na zapade jsou zelene dvere
 true;false;false;false;4;0;V teto mistnosti je zeleny klic
-
 false;false;true;false;0;1;V teto mistnosti je truhla
 true;true;true;true;1;1;Nachazis se na zacatku
 true;false;true;true;2;1;Tady v te mistnosti musis vyresit hadanku, aby jsi prosel dal
 false;true;true;true;3;1;Zautocilo na tebe monstrum, musis s nim bojovat
 true;true;false;true;4;1;Tato mistnost je prazdna
-
 true;false;false;false;0;2;Je tu monstrum, zautoc na nej
 true;true;false;false;1;2;Je tu monstrum, zautoc na nej
 false;true;true;false;2;2;Tato mistnost je prazdna
 true;false;false;true;3;2;Tato mistnost je prazdna
 true;true;false;false;4;2;V teto mistnosti se nachazi nejaka postava, muzes si s ni promluvit
-
 true;true;false;false;0;3;V teto mistnosti se nachazi modry klic
 false;true;false;false;1;3;Tato mistnost je prazdna
 true;false;true;false;2;3;Tady v te mistnosti musis vyresit hadanku, aby jsi prosel dal
 false;true;true;true;3;3;V teto mistnosti je truhla
 false;true;false;true;4;3;Tato mistnost je prazdna
-
 false;true;true;false;0;4;Tato mistnost je prazdna
 false;false;false;true;1;4;V teto mistnosti se nachazi nejaka postava, muzes si s ni promluvit
 false;true;true;false;2;4;Zautocilo na tebe monstrum, musis s nim bojovat
