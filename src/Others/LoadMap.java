@@ -1,33 +1,46 @@
+package Others;
+
 import Entities.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Objects;
+
 
 public class LoadMap {
-    private ArrayList<Room>loadingMap= new ArrayList<>();;
+    private Room [][] loadingMap=new Room [5][5];
     Room r;
 
     public LoadMap() {
-
     }
 
-    public ArrayList<Room> makeMap(){
-        try{
+
+    public  Room [][] makeMap(){
+        int height=4;
+        int width=0;
+
+        try(
+
             BufferedReader bf= new BufferedReader(new FileReader("Map.txt"));
             BufferedReader bf2= new BufferedReader(new FileReader("Entities.txt"));
+        ){
+
             String line;
             String entity;
+
+
             while((line= bf.readLine())!=null&&(entity= bf2.readLine())!=null){
+
+
                 String[] entityStats=entity.split(";");
                 String[] stats=line.split(";");
+
 
                 TypeOfEntity typeOfEntity;
                 typeOfEntity = TypeOfEntity.valueOf(entityStats[0]);
                 TypeOfKey typeOfKey;
                 ContentsOfChest contentsOfChest;
+
 
 
                     switch (typeOfEntity) {
@@ -36,9 +49,8 @@ public class LoadMap {
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
                                     Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6], new Key(typeOfKey));
                         }
-
                         case CHEST -> {
-                            contentsOfChest = ContentsOfChest.valueOf(stats[1]);
+                            contentsOfChest = ContentsOfChest.valueOf(entityStats[1]);
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
                                     Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],new Chest(contentsOfChest));
                         }
@@ -49,7 +61,7 @@ public class LoadMap {
                         case ENEMY ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
                                     Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],
-                                    new Enemy(Integer.parseInt(entityStats[0]),Boolean.parseBoolean(entityStats[1]),Boolean.parseBoolean(entityStats[2]),entityStats[3]));
+                                    new Enemy(Integer.parseInt(entityStats[1]),Boolean.parseBoolean(entityStats[2]),Boolean.parseBoolean(entityStats[3]),entityStats[4]));
 
                         case NPC ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
@@ -68,12 +80,20 @@ public class LoadMap {
                         default -> System.out.println("neco spatne s textovym souborem");
 
                     }
-                    loadingMap.add(r);
+                  loadingMap[height][width]=r;
+                width++;
+                if (width == 5) {
+                    width = 0;
+                    height--;
+                }
             }
+
+
         }
         catch (IOException e){
             System.out.println("posralo se to");
         }
+
         return loadingMap;
     }
 }
