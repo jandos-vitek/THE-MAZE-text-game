@@ -5,6 +5,7 @@ public class Enemy extends Entity {
     private boolean attacksImmediately;
     private boolean alive;
     private String description;
+    Player player;
 
     public Enemy(int health, boolean attacksImmediately, boolean alive, String description) {
         this.health = health;

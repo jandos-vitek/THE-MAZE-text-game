@@ -10,6 +10,7 @@ import java.io.IOException;
 public class LoadMap {
     private Room [][] loadingMap=new Room [5][5];
     Room r;
+    Player p;
 
     public LoadMap() {
     }
@@ -52,7 +53,7 @@ public class LoadMap {
                         case CHEST -> {
                             contentsOfChest = ContentsOfChest.valueOf(entityStats[1]);
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
-                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],new Chest(contentsOfChest));
+                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],new Chest(contentsOfChest,p));
                         }
                         case HEALINGWELL ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),

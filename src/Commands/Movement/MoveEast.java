@@ -29,6 +29,11 @@ public class MoveEast  implements Command {
 
     @Override
     public Boolean end() {
+        Room r = map.getMap()[map.getY()][map.getX()];
+        if(r==map.getMap()[4][0]&& r.isPossibleToGoEast()){
+            System.out.println("Utelk jsi z bludiste");
+            return true;
+        }
         return false;
     }
 }

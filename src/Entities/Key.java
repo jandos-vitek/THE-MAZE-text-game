@@ -2,6 +2,7 @@ package Entities;
 
 public class Key extends Entity{
     private TypeOfKey typeOfKey ;
+    Player player;
 
     public Key(TypeOfKey typeOfKey) {
         this.typeOfKey = typeOfKey;
