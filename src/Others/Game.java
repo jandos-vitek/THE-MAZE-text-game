@@ -15,7 +15,11 @@ public class Game {
         commands.initialize();
         while(!commands.exit()) {
             commands.executing();
+            mapOfRooms.showPlayerStats();
+            mapOfRooms.unlockRooms();
+
         }
-        return "hra zkoncila";
+        return "hra skoncila";
     }
+
 }

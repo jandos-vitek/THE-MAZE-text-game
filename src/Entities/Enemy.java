@@ -1,5 +1,7 @@
 package Entities;
 
+import Others.Player;
+
 public class Enemy extends Entity {
     private int health;
     private boolean attacksImmediately;

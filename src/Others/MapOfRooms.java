@@ -5,7 +5,8 @@ package Others;
 import java.util.ArrayList;
 
 public class MapOfRooms {
-    LoadMap loadMap= new LoadMap();
+    private Player player=new Player(3,0,0,0,false,false,false);
+    LoadMap loadMap= new LoadMap(player);
     private Room [][] map= loadMap.makeMap();
     private int x;
     private int y;
@@ -34,5 +35,34 @@ public class MapOfRooms {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+    public String showPlayerStats(){
+        return player.showStats();
+    }
+    public String unlockRooms(){
+        if(player.hasPurpleKey()) {
+            Room room = map[0][1];
+            Room room2 =map[1][1];
+            room.setPossibleToGoSouth(true);
+            room2.setPossibleToGoNorth(true);
+            return "Odemkly se ti fialove dvere";
+        }
+        if(player.hasBlueKey()) {
+            Room room = map[0][4];
+            room.setPossibleToGoEast(true);
+            return "Odemkly se ti modre dvere";
+        }
+        if(player.hasGreenKey()) {
+            Room room = map[4][2];
+            Room room2 =map[4][3];
+            room.setPossibleToGoEast(true);
+            room2.setPossibleToGoWest(true);
+            return "Odemkly se ti zelene dvere";
+        }
+        return "";
     }
 }

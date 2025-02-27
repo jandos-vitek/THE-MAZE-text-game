@@ -12,7 +12,8 @@ public class LoadMap {
     Room r;
     Player p;
 
-    public LoadMap() {
+    public LoadMap(Player player) {
+        this.p=player;
     }
 
 
@@ -48,7 +49,7 @@ public class LoadMap {
                         case KEY -> {
                             typeOfKey = TypeOfKey.valueOf(entityStats[1]);
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
-                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6], new Key(typeOfKey));
+                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6], new Key(typeOfKey,p));
                         }
                         case CHEST -> {
                             contentsOfChest = ContentsOfChest.valueOf(entityStats[1]);
@@ -57,7 +58,7 @@ public class LoadMap {
                         }
                         case HEALINGWELL ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
-                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],new HealingWell());
+                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],new HealingWell(p));
 
                         case ENEMY ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
@@ -81,8 +82,8 @@ public class LoadMap {
                         default -> System.out.println("neco spatne s textovym souborem");
 
                     }
-                  loadingMap[height][width]=r;
-                width++;
+               loadingMap[height][width]=r;
+               width++;
                 if (width == 5) {
                     width = 0;
                     height--;
@@ -96,5 +97,9 @@ public class LoadMap {
         }
 
         return loadingMap;
+    }
+
+    public Player getP() {
+        return p;
     }
 }

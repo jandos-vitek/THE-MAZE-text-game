@@ -1,11 +1,14 @@
 package Entities;
 
+import Others.Player;
+
 public class Chest extends Entity {
     Player player;
     private ContentsOfChest contentsOfChest;
 
     public Chest(ContentsOfChest contentsOfChest, Player p) {
         this.contentsOfChest = contentsOfChest;
+        this.player=p;
     }
     public void setContentsOfChest(ContentsOfChest contentsOfChest) {
         this.contentsOfChest = contentsOfChest;
@@ -46,7 +49,9 @@ public class Chest extends Entity {
                 player.setNumberOfMushrooms(player.getNumberOfMushrooms()+1);
                 return "Nasel jsi nuz, damage se ti zvysil o 10";
             }
+            default -> {return "tohle by se nikdy nemelo stat";
+            }
         }
-        return "";
+
     }
 }
