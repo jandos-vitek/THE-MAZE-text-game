@@ -40,9 +40,6 @@ public class MapOfRooms {
     public Player getPlayer() {
         return player;
     }
-    public String showPlayerStats(){
-        return player.showStats();
-    }
     public void unlockRooms(){
         if(player.hasPurpleKey()) {
             Room room = map[0][1];

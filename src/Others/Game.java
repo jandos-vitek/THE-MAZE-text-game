@@ -15,7 +15,7 @@ public class Game {
         commands.initialize();
         while(!commands.exit()) {
             commands.executing();
-            mapOfRooms.showPlayerStats();
+            System.out.println( mapOfRooms.getPlayer().showStats());
             mapOfRooms.unlockRooms();
 
         }
