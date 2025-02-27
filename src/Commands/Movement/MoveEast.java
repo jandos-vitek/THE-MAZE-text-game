@@ -6,7 +6,7 @@ import Others.Room;
 
 public class MoveEast  implements Command {
     MapOfRooms map;
-
+boolean end=false;
     public MoveEast(MapOfRooms m) {
         this.map = m;
     }
@@ -16,6 +16,10 @@ public class MoveEast  implements Command {
         String description;
         Room r = map.getMap()[map.getY()][map.getX()];
         if(r.isPossibleToGoEast()) {
+            if(r==map.getMap()[0][4]){
+                end=true;
+                return "Utekl jsi z bludiste";
+            }
             int x= map.getX();
             map.setX(x+1);
             Room r2 = map.getMap()[map.getY()][map.getX()];
@@ -23,6 +27,7 @@ public class MoveEast  implements Command {
             if(r2.getEntity()!=null) {
                 return "sel jis na vychod\n______________________________\n"+"nachazite se na souradnicich y="+map.getY()+"x="+map.getX()+description+"\n"+ r2.getEntity().play();
             }
+
         }
         else{
             return "nejde jit na vychod";
@@ -32,11 +37,6 @@ public class MoveEast  implements Command {
 
     @Override
     public Boolean end() {
-        Room r = map.getMap()[map.getY()][map.getX()];
-        if(r==map.getMap()[4][0]&& r.isPossibleToGoEast()){
-            System.out.println("Utelk jsi z bludiste");
-            return true;
-        }
-        return false;
+        return end;
     }
 }

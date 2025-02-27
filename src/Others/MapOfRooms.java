@@ -43,26 +43,24 @@ public class MapOfRooms {
     public String showPlayerStats(){
         return player.showStats();
     }
-    public String unlockRooms(){
+    public void unlockRooms(){
         if(player.hasPurpleKey()) {
             Room room = map[0][1];
             Room room2 =map[1][1];
             room.setPossibleToGoSouth(true);
             room2.setPossibleToGoNorth(true);
-            return "Odemkly se ti fialove dvere";
         }
         if(player.hasBlueKey()) {
             Room room = map[0][4];
             room.setPossibleToGoEast(true);
-            return "Odemkly se ti modre dvere";
         }
         if(player.hasGreenKey()) {
             Room room = map[4][2];
             Room room2 =map[4][3];
             room.setPossibleToGoEast(true);
             room2.setPossibleToGoWest(true);
-            return "Odemkly se ti zelene dvere";
+
         }
-        return "";
+
     }
 }
