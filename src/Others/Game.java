@@ -4,22 +4,29 @@ import Commands.Commands;
 
 
 public class Game {
-    MapOfRooms mapOfRooms= new MapOfRooms(3,1);
-    Commands commands = new Commands(mapOfRooms);
+    Player player = new Player(100, 0, 0, 0, false, false, false);
+    MapOfRooms mapOfRooms = new MapOfRooms(3, 1, player);
+    Commands commands = new Commands(mapOfRooms, player);
 
     public Game() {
     }
 
     public String playGame() {
-        System.out.println("nachazite se na souradnicich y="+mapOfRooms.getY()+"x="+mapOfRooms.getX());
+        System.out.println("nachazite se na souradnicich y=" + mapOfRooms.getY() + "x=" + mapOfRooms.getX());
         commands.initialize();
-        while(!commands.exit()) {
+        while (!commands.exit() || player.getHealth() <= 0) {
             commands.executing();
-            System.out.println( mapOfRooms.getPlayer().showStats());
-            mapOfRooms.unlockRooms();
 
+            if (commands.didPlayerMove()) {
+                Room room = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
+                if (room.getEntity() != null) {
+                    room.getEntity().play();
+                }
+                System.out.println(mapOfRooms.getPlayer().showStats());
+                mapOfRooms.unlockRooms();
+
+            }
         }
         return "hra skoncila";
     }
-
 }

@@ -1,23 +1,64 @@
 package Entities;
 
+import Commands.Commands;
+import Others.MapOfRooms;
 import Others.Player;
+
+import java.util.Random;
 
 public class Enemy extends Entity {
     private int health;
     private boolean attacksImmediately;
-    private boolean alive;
+    private boolean isAlive;
     private String description;
     Player player;
+    Random rd = new Random();
+    Commands commands;
 
-    public Enemy(int health, boolean attacksImmediately, boolean alive, String description) {
+
+    public Enemy(int health, boolean attacksImmediately, boolean isAlive, String description,Player p) {
         this.health = health;
         this.attacksImmediately = attacksImmediately;
-        this.alive = alive;
+        this.isAlive = isAlive;
         this.description = description;
+        this.player=p;
     }
 
     @Override
     public String play() {
-        return "";
+        if(attacksImmediately){
+            while (isAlive&&player.getHealth()>0){
+                fight();
+            }
+            if(player.getHealth()<=0){
+                return "Umrel jsi";
+            }else {
+                return "zabil jsi nepritele";
+            }
+        }
+        else if (player.agree()){
+            while (isAlive&&player.getHealth()>0){
+                fight();
+            }
+            if(player.getHealth()<=0){
+                return "Umrel jsi";
+            }else {
+                return "zabil jsi nepritele";
+            }
+        }
+
+            return "rozhodl si se neutocit";
+
     }
+
+
+    public String fight(){
+        switch (player.getChoise()){
+            case 'A':
+            case 'B':
+            case 'C':
+            default: return "tohle by se nemelo stat";
+        }
+    }
+
 }

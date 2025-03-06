@@ -24,11 +24,7 @@ boolean end=false;
             map.setX(x+1);
             Room r2 = map.getMap()[map.getY()][map.getX()];
             description=r2.getDescription();
-            if(r2.getEntity()!=null) {
-                return "sel jis na vychod\n______________________________\n"+"nachazite se na souradnicich y="+map.getY()+"x="+map.getX()+description+"\n"+ r2.getEntity().play();
             }
-
-        }
         else{
             return "nejde jit na vychod";
         }

@@ -2,19 +2,27 @@ package Others;
 
 
 
+import Commands.Commands;
+
 import java.util.ArrayList;
 
 public class MapOfRooms {
-    private Player player=new Player(3,0,0,0,false,false,false);
-    LoadMap loadMap= new LoadMap(player);
-    private Room [][] map= loadMap.makeMap();
+    public MapOfRooms(int y,int x,Player p) {
+        this.x = x;
+        this.y = y;
+        this.player=p;
+        loadMap= new LoadMap(player);
+        map= loadMap.makeMap();
+    }
+
+    private Player player;
+    LoadMap loadMap;
+    Commands c;
+    private Room [][] map;
     private int x;
     private int y;
 
-    public MapOfRooms(int y,int x) {
-        this.x = x;
-        this.y = y;
-    }
+
 
 
     public Room[][] getMap() {
