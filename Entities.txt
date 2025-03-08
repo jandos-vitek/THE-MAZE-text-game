@@ -6,10 +6,10 @@ KEY;GREEN
 CHEST;KNIFE
 NONE
 PUZZLE;Co ma 4 nohy a mnouka;kocka;pes;kralik;a
-ENEMY;25;true;true;Tohle monsturm ma cislo 25 a utoci na tebe
+ENEMY;25;true;true;Tohle monsturm ma cislo 25 a utoci na tebe;10
 NONE
-ENEMY;25;false;true;Tohle monsturm ma cislo 25 a muses si vybrat, jestli zautocis
-ENEMY;50;true;true;Tohle monsturm ma cislo 50 a utoci na tebe
+ENEMY;25;false;true;Tohle monsturm ma cislo 25 a muses si vybrat, jestli zautocis;10
+ENEMY;50;true;true;Tohle monsturm ma cislo 50 a utoci na tebe;10
 NONE
 NONE
 TRADER
@@ -20,6 +20,6 @@ CHEST;AXE
 NONE
 NONE
 NPC
-ENEMY;60;true;true;Tohle monsturm ma cislo 60 a utoci na tebe
+ENEMY;60;true;true;Tohle monsturm ma cislo 60 a utoci na tebe;10
 NONE
-ENEMY;75;true;true;Tohle monsturm ma cislo 75 a utoci na tebe
+ENEMY;75;true;true;Tohle monsturm ma cislo 75 a utoci na tebe;10

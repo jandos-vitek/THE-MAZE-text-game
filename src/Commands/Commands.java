@@ -24,6 +24,7 @@ public class Commands {
     public Commands(MapOfRooms m, Player p) {
         this.map = m;
         this.player =p;
+        initialize();
     }
 
     public void initialize() {

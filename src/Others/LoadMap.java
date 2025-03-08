@@ -64,7 +64,7 @@ public class LoadMap {
                         case ENEMY ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
                                     Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],
-                                    new Enemy(Integer.parseInt(entityStats[1]),Boolean.parseBoolean(entityStats[2]),Boolean.parseBoolean(entityStats[3]),entityStats[4],p));
+                                    new Enemy(Integer.parseInt(entityStats[1]),Boolean.parseBoolean(entityStats[2]),Boolean.parseBoolean(entityStats[3]),entityStats[4],Integer.parseInt(entityStats[5]),p));
 
                         case NPC ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),

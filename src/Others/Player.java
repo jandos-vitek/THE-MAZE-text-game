@@ -3,6 +3,7 @@ package Others;
 public class Player {
     private int health;
     private int damage;
+    private int luck;
 
     private int numberOfCoins;
     private int numberOfMushrooms;
@@ -14,7 +15,7 @@ public class Player {
     private char choise;
     private boolean agree;
 
-    public Player(int health, int damage, int numberOfCoins, int numberOfMushrooms, boolean hasBlueKey, boolean hasPurpleKey, boolean hasGreenKey) {
+    public Player(int health, int damage, int numberOfCoins, int numberOfMushrooms, boolean hasBlueKey, boolean hasPurpleKey, boolean hasGreenKey,int luck) {
         this.health = health;
         this.damage = damage;
         this.numberOfCoins = numberOfCoins;
@@ -22,6 +23,7 @@ public class Player {
         this.hasBlueKey = hasBlueKey;
         this.hasPurpleKey = hasPurpleKey;
         this.hasGreenKey = hasGreenKey;
+        this.luck=luck;
     }
    //region set&Get
     public int getHealth() {
@@ -30,6 +32,14 @@ public class Player {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public int getluck() {
+        return luck;
+    }
+
+    public void setLuck(int luck) {
+        this.luck = luck;
     }
 
     public int getDamage() {

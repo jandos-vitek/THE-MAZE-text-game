@@ -4,7 +4,7 @@ import Commands.Commands;
 
 
 public class Game {
-    Player player = new Player(100, 0, 0, 0, false, false, false);
+    Player player = new Player(100, 10, 0, 0, false, false, false,30);
     MapOfRooms mapOfRooms = new MapOfRooms(3, 1, player);
     Commands commands = new Commands(mapOfRooms, player);
 
@@ -13,7 +13,6 @@ public class Game {
 
     public String playGame() {
         System.out.println("nachazite se na souradnicich y=" + mapOfRooms.getY() + "x=" + mapOfRooms.getX());
-        commands.initialize();
         while (!commands.exit() || player.getHealth() <= 0) {
             commands.executing();
 

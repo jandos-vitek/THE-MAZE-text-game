@@ -18,26 +18,26 @@ public class Chest extends Entity {
     public String play() {
         switch (contentsOfChest) {
             case KNIFE -> {
-                if (player.getDamage() == 0) {
-                    player.setDamage(10);
-                }
-                return "Nasel jsi nuz, damage se ti zvysil o 10";
-            }
-            case DAGGER ->{
-                if (player.getDamage() <15) {
-                    player.setDamage(15);
-                }
-                return "Nasel jsi dyku, damage se ti zvysil o 10";
-            }
-            case AXE ->{
-                if (player.getDamage()<20) {
+                if (player.getDamage() == 10) {
                     player.setDamage(20);
                 }
                 return "Nasel jsi nuz, damage se ti zvysil o 10";
             }
-            case SWORD ->{
+            case DAGGER ->{
                 if (player.getDamage() <25) {
                     player.setDamage(25);
+                }
+                return "Nasel jsi dyku, damage se ti zvysil o 10";
+            }
+            case AXE ->{
+                if (player.getDamage()<30) {
+                    player.setDamage(30);
+                }
+                return "Nasel jsi nuz, damage se ti zvysil o 10";
+            }
+            case SWORD ->{
+                if (player.getDamage() <35) {
+                    player.setDamage(35);
                 }
                 return "Nasel jsi nuz, damage se ti zvysil o 10";
             }

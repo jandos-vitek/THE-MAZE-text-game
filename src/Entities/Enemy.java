@@ -11,17 +11,20 @@ public class Enemy extends Entity {
     private boolean attacksImmediately;
     private boolean isAlive;
     private String description;
+    private int damage;
     Player player;
     Random rd = new Random();
     Commands commands;
 
 
-    public Enemy(int health, boolean attacksImmediately, boolean isAlive, String description,Player p) {
+    public Enemy(int health, boolean attacksImmediately, boolean isAlive, String description,int damage,Player p) {
         this.health = health;
         this.attacksImmediately = attacksImmediately;
         this.isAlive = isAlive;
         this.description = description;
         this.player=p;
+        this.damage=damage;
+        commands=new Commands(null,player);
     }
 
     @Override
@@ -53,6 +56,7 @@ public class Enemy extends Entity {
 
 
     public String fight(){
+        commands.executing();
         switch (player.getChoise()){
             case 'A':
             case 'B':
