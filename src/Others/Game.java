@@ -4,9 +4,9 @@ import Commands.Commands;
 
 
 public class Game {
-    Player player = new Player(100, 10, 0, 0, false, false, false,30);
+    Player player = new Player(100, 10, 0, 3, false, false, false,30);
     MapOfRooms mapOfRooms = new MapOfRooms(3, 1, player);
-    Commands commands = new Commands(mapOfRooms, player);
+    Commands commands = new Commands(mapOfRooms, player,null);
 
     public Game() {
     }

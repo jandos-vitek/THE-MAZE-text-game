@@ -17,52 +17,59 @@ public class Enemy extends Entity {
     Commands commands;
 
 
-    public Enemy(int health, boolean attacksImmediately, boolean isAlive, String description,int damage,Player p) {
+    public Enemy(int health, boolean attacksImmediately, boolean isAlive, String description, int damage, Player p) {
         this.health = health;
         this.attacksImmediately = attacksImmediately;
         this.isAlive = isAlive;
         this.description = description;
-        this.player=p;
-        this.damage=damage;
-        commands=new Commands(null,player);
+        this.player = p;
+        this.damage = damage;
+        commands = new Commands(null, player, this);
     }
 
     @Override
     public String play() {
-        if(attacksImmediately){
-            while (isAlive&&player.getHealth()>0){
-                fight();
-            }
-            if(player.getHealth()<=0){
-                return "Umrel jsi";
+        System.out.println("jdete fightit");
+        if (!attacksImmediately) {
+            commands.agreeing();
+            if (player.agree()) {
+                return fight();
             }else {
-                return "zabil jsi nepritele";
+                return "rozhodl ses neutocit";
             }
         }
-        else if (player.agree()){
-            while (isAlive&&player.getHealth()>0){
-                fight();
-            }
-            if(player.getHealth()<=0){
-                return "Umrel jsi";
-            }else {
-                return "zabil jsi nepritele";
-            }
+        else {
+           return fight();
         }
-
-            return "rozhodl si se neutocit";
 
     }
 
 
-    public String fight(){
-        commands.executing();
-        switch (player.getChoise()){
-            case 'A':
-            case 'B':
-            case 'C':
-            default: return "tohle by se nemelo stat";
+public String fight(){
+        while (this.health>0&&player.getHealth()>0) {
+            commands.fighting();
         }
+    if (this.health<=0){
+        return "Vyhral jsi";
+    }
+    else {
+        return "Byl jsi porazen";
+    }
+}
+
+    public int getHealth() {
+        return health;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 }

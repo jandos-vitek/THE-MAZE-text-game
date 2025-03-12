@@ -1,8 +1,9 @@
-package Commands;
+package Commands.Agreeing;
 
+import Commands.Command;
 import Others.Player;
 
-public class No implements Command{
+public class No implements Command {
     Player player;
 
     public No(Player p) {
