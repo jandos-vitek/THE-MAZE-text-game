@@ -1,6 +1,7 @@
 package Others;
 
 import Commands.Commands;
+import Entities.Enemy;
 
 
 public class Game {
@@ -19,7 +20,10 @@ public class Game {
             if (commands.didPlayerMove()) {
                 Room room = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
                 if (room.getEntity() != null) {
-                    room.getEntity().play();
+                    if(room.getEntity() instanceof Enemy){
+                        System.out.println(((Enemy) room.getEntity()).getDescription());
+                    }
+                    System.out.println(room.getEntity().play());
                 }
                 System.out.println(mapOfRooms.getPlayer().showStats());
                 mapOfRooms.unlockRooms();

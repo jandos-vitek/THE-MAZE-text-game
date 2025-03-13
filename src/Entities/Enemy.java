@@ -13,7 +13,6 @@ public class Enemy extends Entity {
     private String description;
     private int damage;
     Player player;
-    Random rd = new Random();
     Commands commands;
 
 
@@ -29,33 +28,37 @@ public class Enemy extends Entity {
 
     @Override
     public String play() {
-        System.out.println("jdete fightit");
-        if (!attacksImmediately) {
-            commands.agreeing();
-            if (player.agree()) {
+        if (isAlive) {
+            if (!attacksImmediately) {
+                System.out.println("rozhodni jestli chces zautocit");
+                commands.agreeing();
+                if (player.agree()) {
+                    System.out.println("boj zacina");
+                    return fight();
+                }
+                if (!player.agree()) {
+                    return "rozhodl ses neutocit ☹\uFE0F☹\uFE0F☹\uFE0F";
+                } else return "tenhle prikaz neexistuje";
+            } else {
+                System.out.println("boj zacina");
                 return fight();
-            }else {
-                return "rozhodl ses neutocit";
             }
         }
-        else {
-           return fight();
-        }
-
+        return "uz je mrtvej  ☠\uFE0F☠\uFE0F☠\uFE0F☠\uFE0F";
     }
 
 
-public String fight(){
-        while (this.health>0&&player.getHealth()>0) {
+    public String fight() {
+        while (this.health > 0 && player.getHealth() > 0) {
             commands.fighting();
         }
-    if (this.health<=0){
-        return "Vyhral jsi";
+        if (this.health <= 0) {
+            setAlive(false);
+            return "Vyhral jsi🎉✨✨🎉🎉";
+        } else {
+            return "Byl jsi porazen";
+        }
     }
-    else {
-        return "Byl jsi porazen";
-    }
-}
 
     public int getHealth() {
         return health;
@@ -71,5 +74,13 @@ public String fight(){
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
     }
 }

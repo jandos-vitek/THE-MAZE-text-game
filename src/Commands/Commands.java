@@ -41,8 +41,9 @@ public class Commands {
         commands.put("jdi vychod", new MoveEast(map));
         commands.put("jdi zapad", new MoveWest(map));
         commands.put("konec", new Exit());
-        commands.put("Ne",new No(player));
-        commands.put("Ano",new Yes(player));
+        commands.put("pomoc", new Help());
+        commands.put("ne",new No(player));
+        commands.put("ano",new Yes(player));
         commands.put("A",new OptionA(player));
         commands.put("B",new OptionB(player));
         commands.put("C",new OptionC(player));
@@ -83,15 +84,24 @@ public class Commands {
             System.out.println("tenhle prikaz neexistuje");
         }
     }
+
+
+
+
     public void agreeing() {
-        String command = sc.nextLine();
-        if (commands.containsKey(command)&&(command.equalsIgnoreCase("ano")||command.equalsIgnoreCase("ne"))) {
+        String command = sc.nextLine().toLowerCase();
+        if (commands.containsKey(command)&&(command.equals("ano")||command.equals("ne"))) {
             System.out.println(commands.get(command).execute());
             exit = commands.get(command).end();
         } else {
-            System.out.println("tenhle prikaz neexistuje");
+            System.out.println("tady je problem");
         }
     }
+
+
+
+
+
     public void fighting() {
         String command = sc.nextLine();
         if (commands.containsKey(command)&&(command.equalsIgnoreCase("utok")||command.equalsIgnoreCase("kouzlo")||command.equalsIgnoreCase("leceni"))) {

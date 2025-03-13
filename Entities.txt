@@ -9,7 +9,7 @@ PUZZLE;Co ma 4 nohy a mnouka;kocka;pes;kralik;a
 ENEMY;25;true;true;Tohle monsturm ma cislo 25 a utoci na tebe;10
 NONE
 ENEMY;25;false;true;Tohle monsturm ma cislo 25 a muses si vybrat, jestli zautocis;10
-ENEMY;50;true;true;Tohle monsturm ma cislo 50 a utoci na tebe;10
+ENEMY;50;false;true;Tohle monsturm ma cislo 50 a muses si vybrat, jestli zautocis;10
 NONE
 NONE
 TRADER
