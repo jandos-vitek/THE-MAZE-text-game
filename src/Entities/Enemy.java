@@ -54,9 +54,11 @@ public class Enemy extends Entity {
         }
         if (this.health <= 0) {
             setAlive(false);
-            return "Vyhral jsi🎉✨✨🎉🎉";
+            return "Vyhral jsi 🎉✨✨🎉🎉";
+        } else if (player.getHealth() <= 0) {
+            return "Byl jsi porazen 😵";
         } else {
-            return "Byl jsi porazen";
+            return "Nečekaná chyba v souboji";
         }
     }
 

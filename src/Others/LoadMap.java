@@ -72,11 +72,11 @@ public class LoadMap {
 
                         case TRADER ->
                             r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
-                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],new Trader());
+                                    Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],new Trader(p));
                         case PUZZLE ->
                                 r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
                                         Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],
-                                        new Puzzle(entityStats[0],entityStats[1],entityStats[2],entityStats[3],entityStats[4]));
+                                        new Puzzle(p));
                         case NONE ->
                                 r = new Room(Boolean.parseBoolean(stats[0]), Boolean.parseBoolean(stats[1]), Boolean.parseBoolean(stats[2]), Boolean.parseBoolean(stats[3]),
                                         Integer.parseInt(stats[4]), Integer.parseInt(stats[5]), stats[6],null);

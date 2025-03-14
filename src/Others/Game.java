@@ -5,27 +5,26 @@ import Entities.Enemy;
 
 
 public class Game {
-    Player player = new Player(100, 10, 0, 3, false, false, false,30);
+    Player player = new Player(100, 10, 0, 3, false, false, false, 30);
     MapOfRooms mapOfRooms = new MapOfRooms(3, 1, player);
-    Commands commands = new Commands(mapOfRooms, player,null);
+    Commands commands = new Commands(mapOfRooms, player, null);
 
     public Game() {
     }
 
     public String playGame() {
         System.out.println("nachazite se na souradnicich y=" + mapOfRooms.getY() + "x=" + mapOfRooms.getX());
-        while (!commands.exit() || player.getHealth() <= 0) {
+        while (!commands.exit() && player.getHealth() >= 0) {
+            Room room1 = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
             commands.executing();
-
             if (commands.didPlayerMove()) {
-                Room room = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
-                if (room.getEntity() != null) {
-                    if(room.getEntity() instanceof Enemy){
-                        System.out.println(((Enemy) room.getEntity()).getDescription());
+                Room room2 = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
+                if (room2.getEntity()!= null) {
+                    if (room2.getEntity() instanceof Enemy && room2 != room1) {
+                        System.out.println(((Enemy) room2.getEntity()).getDescription());
                     }
-                    System.out.println(room.getEntity().play());
+                    System.out.println(room2.getEntity().play());
                 }
-                System.out.println(mapOfRooms.getPlayer().showStats());
                 mapOfRooms.unlockRooms();
 
             }

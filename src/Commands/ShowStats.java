@@ -1,19 +1,17 @@
-package Commands.Options;
+package Commands;
 
-import Commands.Command;
 import Others.Player;
 
-public class OptionC implements Command {
+public class ShowStats implements Command{
     Player player;
 
-    public OptionC(Player p) {
+    public ShowStats(Player p) {
         this.player = p;
     }
 
     @Override
     public String execute() {
-        player.setChoise('c');
-        return "Vybral sis moznost C";
+        return player.showStats();
     }
 
     @Override

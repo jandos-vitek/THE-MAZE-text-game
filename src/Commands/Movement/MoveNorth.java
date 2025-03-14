@@ -23,13 +23,14 @@ public class MoveNorth implements Command {
             description = r2.getDescription();
         }
         else{
-            return "Nejde jit na sever";
+            return "Nejde jit na sever\n──────────────────────────────";
         }
-        return "Sel jis na sever\n______________________________\n"+"nachazite se na souradnicich y="+map.getY()+"x="+map.getX()+description;
+        return "Sel jis na sever\n──────────────────────────────\n"+"nachazite se na souradnicich y="+map.getY()+"x="+map.getX()+description;
     }
 
     @Override
     public Boolean end() {
         return false;
     }
+
 }

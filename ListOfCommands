@@ -1,6 +1,7 @@
+──────────────────────────────
 KONEC – Ukončí hru
-PRERUSIT – Přeruší probíhající akci, například konverzaci s neutrální postavou. Boj nejde přerušit
-POMOC – Zobrazí všechny příkazy a jejich vysvětlení
+PRIKAZY – Ukaze vsechny prikazy
+VYBAVA – Ukaze vybavu a vlastnosti vasi postavy
 JDI SEVER – Pokud to je možné, posune se do místnosti, která je směrem na sever od té, kde právě je
 JDI JIH – Pokud to je možné, posune se do místnosti, která je směrem na jih od té, kde právě je
 JDI VYCHOD – Pokud to je možné, posune se do místnosti, která je směrem na východ od té, kde právě je
@@ -13,3 +14,4 @@ NE – Nesouhlas
 LECENI – Využije magickou houbičku na vyléčení se
 UTOK – Zautoci na nepritele normalnim utokem
 KOUZLO – Zautoci na nepritele magickym utokem
+──────────────────────────────

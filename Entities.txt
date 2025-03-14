@@ -5,7 +5,7 @@ NONE
 KEY;GREEN
 CHEST;KNIFE
 NONE
-PUZZLE;Co ma 4 nohy a mnouka;kocka;pes;kralik;a
+PUZZLE
 ENEMY;25;true;true;Tohle monsturm ma cislo 25 a utoci na tebe;10
 NONE
 ENEMY;25;false;true;Tohle monsturm ma cislo 25 a muses si vybrat, jestli zautocis;10
@@ -15,7 +15,7 @@ NONE
 TRADER
 KEY;BLUE
 NONE
-PUZZLE;kolik ma brezen dni;2;31;30;b
+PUZZLE
 CHEST;AXE
 NONE
 NONE

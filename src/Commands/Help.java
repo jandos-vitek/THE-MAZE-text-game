@@ -11,10 +11,9 @@ public class Help implements Command {
     String text="";
 
 public String reading() {
-    try (BufferedReader br = new BufferedReader(new FileReader("ListOfCommands.txt"))) {
+    try (BufferedReader br = new BufferedReader(new FileReader("ListOfCommands"))) {
         while ((line = br.readLine()) != null) {
-            text+=line;
-
+            text+=line+"\n";
         }
     } catch (FileNotFoundException e) {
         System.out.println("Soubor nebyl nalezen");

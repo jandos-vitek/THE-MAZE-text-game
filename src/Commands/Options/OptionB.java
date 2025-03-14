@@ -12,7 +12,7 @@ public class OptionB implements Command {
 
     @Override
     public String execute() {
-        player.setChoise('B');
+        player.setChoise('b');
         return "Vybral sis moznost B";
             }
 

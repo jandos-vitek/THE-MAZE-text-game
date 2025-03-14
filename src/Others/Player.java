@@ -117,12 +117,12 @@ public class Player {
         if (hasGreenKey) {
             keys += "zeleny klic";
         }
-        return "\nPlayer\n_____________________________________" +
+        return "\nStav vasi postavy\n──────────────────────────────" +
                 "\npocet zivotu: " + health +
                 "\ndamage: " + damage +
                 "\npocet penez: " + numberOfCoins +
                 "\npocet magickych houbicek: " + numberOfMushrooms +
-                "\nklice: " + keys;
+                "\nklice: " + keys+"\n──────────────────────────────";
 
 
     }

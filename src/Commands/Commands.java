@@ -28,10 +28,10 @@ public class Commands {
     private boolean exit = false;
     private boolean didPlayerMove;
 
-    public Commands(MapOfRooms m, Player p,Enemy e) {
+    public Commands(MapOfRooms m, Player p, Enemy e) {
         this.map = m;
-        this.player =p;
-        this.enemy=e;
+        this.player = p;
+        this.enemy = e;
         initialize();
     }
 
@@ -42,23 +42,24 @@ public class Commands {
         commands.put("jdi zapad", new MoveWest(map));
         commands.put("konec", new Exit());
         commands.put("pomoc", new Help());
-        commands.put("ne",new No(player));
-        commands.put("ano",new Yes(player));
-        commands.put("A",new OptionA(player));
-        commands.put("B",new OptionB(player));
-        commands.put("C",new OptionC(player));
-        commands.put("utok",new Attack(enemy,player));
-        commands.put("kouzlo",new UsingSpell(enemy,player));
-        commands.put("leceni",new Healing(enemy,player));
+        commands.put("ne", new No(player));
+        commands.put("ano", new Yes(player));
+        commands.put("a", new OptionA(player));
+        commands.put("b", new OptionB(player));
+        commands.put("c", new OptionC(player));
+        commands.put("utok", new Attack(enemy, player));
+        commands.put("kouzlo", new UsingSpell(enemy, player));
+        commands.put("leceni", new Healing(enemy, player));
+        commands.put("vybava", new ShowStats(player));
     }
 
     public void executing() {
         String command = sc.nextLine();
         if (commands.containsKey(command)) {
-            if(command.startsWith("jdi")){
+            if (command.startsWith("jdi")) {
                 didPlayerMove=true;
-            }else {
-                didPlayerMove=false;
+            } else {
+                didPlayerMove = false;
             }
             System.out.println(commands.get(command).execute());
             exit = commands.get(command).end();
@@ -76,39 +77,54 @@ public class Commands {
     }
 
     public void choosingOptions() {
-        String command = sc.nextLine();
-        if (commands.containsKey(command)&&(command.equalsIgnoreCase("a")||command.equalsIgnoreCase("b")||command.equalsIgnoreCase("c"))) {
-            System.out.println(commands.get(command).execute());
-            exit = commands.get(command).end();
-        } else {
-            System.out.println("tenhle prikaz neexistuje");
+        String command = sc.nextLine().toLowerCase();
+        if (commands.containsKey(command)){
+            if(command.equals("a") || command.equals("b")|| command.equals("c")) {
+                System.out.println(commands.get(command).execute());
+                exit = commands.get(command).end();
+            }
+            else {
+                System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
+               choosingOptions();
+            }
+        }else {
+            System.out.println("tenhle prikaz neexistuje, zadej ho znovu");
+            choosingOptions();
         }
     }
-
-
 
 
     public void agreeing() {
         String command = sc.nextLine().toLowerCase();
-        if (commands.containsKey(command)&&(command.equals("ano")||command.equals("ne"))) {
+        if (commands.containsKey(command)){
+            if(command.equals("ano") || command.equals("ne")) {
             System.out.println(commands.get(command).execute());
             exit = commands.get(command).end();
-        } else {
-            System.out.println("tady je problem");
+        }
+            else {
+                System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
+                agreeing();
+            }
+        }else {
+            System.out.println("tenhle prikaz neexistuje, zadej ho znovu");
+            agreeing();
         }
     }
 
 
-
-
-
     public void fighting() {
         String command = sc.nextLine();
-        if (commands.containsKey(command)&&(command.equalsIgnoreCase("utok")||command.equalsIgnoreCase("kouzlo")||command.equalsIgnoreCase("leceni"))) {
-            System.out.println(commands.get(command).execute());
-            exit = commands.get(command).end();
-        } else {
-            System.out.println("tenhle prikaz neexistuje");
+        if (commands.containsKey(command)){
+            if (command.equalsIgnoreCase("utok") || command.equalsIgnoreCase("kouzlo") || command.equalsIgnoreCase("leceni")) {
+                System.out.println(commands.get(command).execute());
+                exit = commands.get(command).end();
+            }else {
+                System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
+                fighting();
+            }
+    } else {
+            System.out.println("tenhle prikaz neexistuje, zadej ho znovu");
+            fighting();
         }
     }
 }

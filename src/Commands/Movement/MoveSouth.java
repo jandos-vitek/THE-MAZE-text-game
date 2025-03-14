@@ -22,9 +22,9 @@ public class MoveSouth implements Command {
             description=r2.getDescription();
             }
         else{
-            return "Nejde jit na jih";
+            return "Nejde jit na jih\n──────────────────────────────";
         }
-        return "sel jis na jih\n______________________________\n"+"nachazite se na souradnicich y="+map.getY()+"x="+map.getX()+description;
+        return "sel jis na jih\n──────────────────────────────\n"+"nachazite se na souradnicich y="+map.getY()+"x="+map.getX()+description;
     }
 
     @Override
