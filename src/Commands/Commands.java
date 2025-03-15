@@ -49,7 +49,7 @@ public class Commands {
         commands.put("c", new OptionC(player));
         commands.put("utok", new Attack(enemy, player));
         commands.put("kouzlo", new UsingSpell(enemy, player));
-        commands.put("leceni", new Healing(enemy, player));
+        commands.put("leceni", new Healing(player,enemy));
         commands.put("vybava", new ShowStats(player));
     }
 
@@ -118,6 +118,10 @@ public class Commands {
             if (command.equalsIgnoreCase("utok") || command.equalsIgnoreCase("kouzlo") || command.equalsIgnoreCase("leceni")) {
                 System.out.println(commands.get(command).execute());
                 exit = commands.get(command).end();
+                if(command.equalsIgnoreCase("leceni")){
+
+                }
+
             }else {
                 System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
                 fighting();

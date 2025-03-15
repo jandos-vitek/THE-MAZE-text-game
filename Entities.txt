@@ -6,10 +6,10 @@ KEY;GREEN
 CHEST;KNIFE
 NONE
 PUZZLE
-ENEMY;25;true;true;Tohle monsturm ma cislo 25 a utoci na tebe;10
+ENEMY;100;20;5;true;true;Tohle monsturm ma 100 zivotu, stesti 20, damage 5 a utoci na tebe
 NONE
-ENEMY;25;false;true;Tohle monsturm ma cislo 25 a muses si vybrat, jestli zautocis;10
-ENEMY;50;false;true;Tohle monsturm ma cislo 50 a muses si vybrat, jestli zautocis;10
+ENEMY;100;10;10;false;true;Tohle monsturm ma 100 zivotu, stesti 20, damage 5 a muses si vybrat, jestli zautocis
+ENEMY;100;10;15;false;true;Tohle monsturm ma 100 zivotu, stesti 10, damage 10 a muses si vybrat, jestli zautocis
 NONE
 NONE
 TRADER
@@ -20,6 +20,6 @@ CHEST;AXE
 NONE
 NONE
 NPC
-ENEMY;60;true;true;Tohle monsturm ma cislo 60 a utoci na tebe;10
+ENEMY;100;0;25;true;true;Tohle monsturm ma 100 zivotu, stesti 0, damage 25 a utoci na tebe
 NONE
-ENEMY;75;true;true;Tohle monsturm ma cislo 75 a utoci na tebe;10
+ENEMY;100;40;0;true;true;Tohle monsturm ma 100 zivotu, stesti 40, damage 0 a utoci na tebe

@@ -17,13 +17,15 @@ public class Game {
         while (!commands.exit() && player.getHealth() >= 0) {
             Room room1 = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
             commands.executing();
+
             if (commands.didPlayerMove()) {
                 Room room2 = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
+
                 if (room2.getEntity()!= null) {
                     if (room2.getEntity() instanceof Enemy && room2 != room1) {
                         System.out.println(((Enemy) room2.getEntity()).getDescription());
+                        System.out.println(room2.getEntity().play());
                     }
-                    System.out.println(room2.getEntity().play());
                 }
                 mapOfRooms.unlockRooms();
 

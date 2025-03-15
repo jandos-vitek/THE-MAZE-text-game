@@ -20,9 +20,9 @@ public class UsingSpell implements Command {
         if(player.getNumberOfMushrooms()>0) {
            enemy.setHealth(enemy.getHealth()- rd.nextInt(60));
             player.setNumberOfMushrooms(player.getNumberOfMushrooms()-1);
-            player.setHealth(player.getHealth()-enemy.getDamage());
             if(enemy.getHealth()>0) {
-                return "HP nepritele: " + enemy.getHealth() + "\n__________________________\n" + player.showStats();
+                player.setHealth(player.getHealth()-enemy.getDamage()- rd.nextInt(enemy.getLuck()));
+                return "HP nepritele: " + enemy.getHealth() + "\n──────────────────────────────\n" + player.showStats();
             }
         }
         else {

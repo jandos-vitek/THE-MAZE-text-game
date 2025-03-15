@@ -12,17 +12,19 @@ public class Enemy extends Entity {
     private boolean isAlive;
     private String description;
     private int damage;
+    private int luck;
     Player player;
     Commands commands;
 
 
-    public Enemy(int health, boolean attacksImmediately, boolean isAlive, String description, int damage, Player p) {
+    public Enemy(int health, int luck,int damage,boolean attacksImmediately, boolean isAlive, String description, Player p) {
         this.health = health;
         this.attacksImmediately = attacksImmediately;
         this.isAlive = isAlive;
         this.description = description;
         this.player = p;
         this.damage = damage;
+        this.luck=luck;
         commands = new Commands(null, player, this);
     }
 
@@ -84,5 +86,9 @@ public class Enemy extends Entity {
 
     public void setAlive(boolean alive) {
         isAlive = alive;
+    }
+
+    public int getLuck() {
+        return luck;
     }
 }
