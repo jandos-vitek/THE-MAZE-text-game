@@ -22,14 +22,15 @@ public class Game {
                 Room room2 = mapOfRooms.getMap()[mapOfRooms.getY()][mapOfRooms.getX()];
 
                 if (room2.getEntity()!= null) {
-                    if (room2.getEntity() instanceof Enemy && room2 != room1) {
-                        System.out.println(((Enemy) room2.getEntity()).getDescription());
+                    if(room2 != room1) {
+                        if (room2.getEntity() instanceof Enemy) {
+                            System.out.println(((Enemy) room2.getEntity()).getDescription());
+                        }
                         System.out.println(room2.getEntity().play());
                     }
                 }
-                mapOfRooms.unlockRooms();
-
             }
+            mapOfRooms.unlockRooms();
         }
         return "hra skoncila";
     }
