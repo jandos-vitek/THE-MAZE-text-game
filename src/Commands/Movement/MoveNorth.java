@@ -25,7 +25,7 @@ public class MoveNorth implements Command {
         else{
             return "Nejde jit na sever\n──────────────────────────────";
         }
-        return "Sel jis na sever\n──────────────────────────────\n"+"nachazite se na souradnicich y="+map.getY()+"x="+map.getX()+description;
+        return "Sel jsi na sever\n──────────────────────────────\n"+"nachazite se na souradnicich y="+map.getY()+"x="+" "+map.getX()+description;
     }
 
     @Override

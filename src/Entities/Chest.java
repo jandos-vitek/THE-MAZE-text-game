@@ -37,21 +37,21 @@ public class Chest extends Entity {
                     if (player.getDamage() < 30) {
                         player.setDamage(30);
                     }
-                    return "Nasel jsi nuz, damage se ti zvysil na 30";
+                    return "Nasel jsi sekeru, damage se ti zvysil na 30";
                 }
                 case SWORD -> {
                     if (player.getDamage() < 35) {
                         player.setDamage(35);
                     }
-                    return "Nasel jsi nuz, damage se ti zvysil na 35";
+                    return "Nasel jsi mec, damage se ti zvysil na 35";
                 }
                 case COIN -> {
                     player.setNumberOfCoins(player.getNumberOfCoins() + 3);
-                    return "Nasel jsi nuz, damage se ti zvysil o 10";
+                    return "Nasel jsi 3 coiny";
                 }
                 case MUSHROOM -> {
                     player.setNumberOfMushrooms(player.getNumberOfMushrooms() + 1);
-                    return "Nasel jsi nuz, damage se ti zvysil o 10";
+                    return "Nasel jsi magickou houbu";
                 }
                 default -> {
                     return "tohle by se nikdy nemelo stat";

@@ -52,12 +52,15 @@ public class Trader extends Entity{
                     System.out.println(speech.get(9));
                     commands.choosingOptions();
                     switch (player.getChoise()){
-                        case 'a':
-                            System.out.println(choosingWeapon(25,2));
-                        case 'b':
-                            System.out.println(choosingWeapon(30,3));
+                        case 'a': {
+                            return choosingWeapon(25, 2);
+                        }
+                        case 'b': {
+                            return choosingWeapon(30, 3);
+                        }
                         case 'c':
-                            System.out.println(choosingWeapon(35,4));
+                           return choosingWeapon(35, 4);
+
                     }
                     break;
                 case 'b':
@@ -95,12 +98,7 @@ public class Trader extends Entity{
                     }
             }
         }
-        else {
-            System.out.println(speech.get(1));
-        }
-
-
-        return "";
+           return speech.get(1);
     }
 
     public String choosingWeapon(int damage, int price){

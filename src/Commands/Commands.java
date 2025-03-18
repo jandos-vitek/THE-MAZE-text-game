@@ -49,22 +49,30 @@ public class Commands {
         commands.put("c", new OptionC(player));
         commands.put("utok", new Attack(enemy, player));
         commands.put("kouzlo", new UsingSpell(enemy, player));
-        commands.put("leceni", new Healing(player,enemy));
+        commands.put("leceni", new Healing(player, enemy));
         commands.put("vybava", new ShowStats(player));
     }
 
     public void executing() {
+        System.out.println(">>");
         String command = sc.nextLine();
         if (commands.containsKey(command)) {
-            if (command.startsWith("jdi")) {
-                didPlayerMove=true;
+            if (command.startsWith("jdi") || command.equalsIgnoreCase("konec") || command.equalsIgnoreCase("pomoc")
+                    || command.equalsIgnoreCase("vybava") || command.equalsIgnoreCase("leceni")) {
+                if (command.startsWith("jdi")) {
+                    didPlayerMove = true;
+                } else {
+                    didPlayerMove = false;
+                }
+                System.out.println(commands.get(command).execute());
+                exit = commands.get(command).end();
             } else {
-                didPlayerMove = false;
+                System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
+                executing();
             }
-            System.out.println(commands.get(command).execute());
-            exit = commands.get(command).end();
         } else {
             System.out.println("tenhle prikaz neexistuje");
+            executing();
         }
     }
 
@@ -77,17 +85,17 @@ public class Commands {
     }
 
     public void choosingOptions() {
+        System.out.println(">>");
         String command = sc.nextLine().toLowerCase();
-        if (commands.containsKey(command)){
-            if(command.equals("a") || command.equals("b")|| command.equals("c")) {
+        if (commands.containsKey(command)) {
+            if (command.equals("a") || command.equals("b") || command.equals("c") || command.equalsIgnoreCase("konec") || command.equalsIgnoreCase("pomoc")) {
                 System.out.println(commands.get(command).execute());
                 exit = commands.get(command).end();
-            }
-            else {
+            } else {
                 System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
-               choosingOptions();
+                choosingOptions();
             }
-        }else {
+        } else {
             System.out.println("tenhle prikaz neexistuje, zadej ho znovu");
             choosingOptions();
         }
@@ -95,17 +103,17 @@ public class Commands {
 
 
     public void agreeing() {
+        System.out.println(">>");
         String command = sc.nextLine().toLowerCase();
-        if (commands.containsKey(command)){
-            if(command.equals("ano") || command.equals("ne")) {
-            System.out.println(commands.get(command).execute());
-            exit = commands.get(command).end();
-        }
-            else {
+        if (commands.containsKey(command)) {
+            if (command.equals("ano") || command.equals("ne") || command.equalsIgnoreCase("konec") || command.equalsIgnoreCase("pomoc")) {
+                System.out.println(commands.get(command).execute());
+                exit = commands.get(command).end();
+            } else {
                 System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
                 agreeing();
             }
-        }else {
+        } else {
             System.out.println("tenhle prikaz neexistuje, zadej ho znovu");
             agreeing();
         }
@@ -113,20 +121,18 @@ public class Commands {
 
 
     public void fighting() {
+        System.out.println(">>");
         String command = sc.nextLine();
-        if (commands.containsKey(command)){
-            if (command.equalsIgnoreCase("utok") || command.equalsIgnoreCase("kouzlo") || command.equalsIgnoreCase("leceni")) {
+        if (commands.containsKey(command)) {
+            if (command.equalsIgnoreCase("utok") || command.equalsIgnoreCase("kouzlo") || command.equalsIgnoreCase("leceni")
+                    || command.equalsIgnoreCase("konec") || command.equalsIgnoreCase("pomoc")) {
                 System.out.println(commands.get(command).execute());
                 exit = commands.get(command).end();
-                if(command.equalsIgnoreCase("leceni")){
-
-                }
-
-            }else {
+            } else {
                 System.out.println("tento prikaz ted nemuzes pouzit, zadej ho znovu");
                 fighting();
             }
-    } else {
+        } else {
             System.out.println("tenhle prikaz neexistuje, zadej ho znovu");
             fighting();
         }

@@ -7,7 +7,7 @@ false;false;true;false;3;0;V teto mistnosti je truhla
 true;true;true;true;3;1;Nachazis se na zacatku
 true;false;true;true;3;2;Tady v te mistnosti musis vyresit hadanku, aby jsi prosel dal
 false;true;true;true;3;3;Zautocilo na tebe monstrum, musis s nim bojovat
-true;true;false;true;3;4;Tato mistnost je prazdna
+true;true;false;true;3;4;V teto mistnosti je truhla
 true;false;false;false;2;0;Je tu monstrum, zautoc na nej
 true;true;false;false;2;1;Je tu monstrum, zautoc na nej
 false;true;true;false;2;2;Tato mistnost je prazdna

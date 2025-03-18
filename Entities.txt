@@ -7,7 +7,7 @@ CHEST;KNIFE
 NONE
 PUZZLE
 ENEMY;100;20;5;true;true;Tohle monsturm ma 100 zivotu, stesti 20, damage 5 a utoci na tebe
-NONE
+CHEST;COIN
 ENEMY;100;10;10;false;true;Tohle monsturm ma 100 zivotu, stesti 20, damage 5 a muses si vybrat, jestli zautocis
 ENEMY;100;10;15;false;true;Tohle monsturm ma 100 zivotu, stesti 10, damage 10 a muses si vybrat, jestli zautocis
 NONE
