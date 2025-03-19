@@ -53,7 +53,7 @@ public class Trader extends Entity{
                     commands.choosingOptions();
                     switch (player.getChoise()){
                         case 'a': {
-                            return choosingWeapon(25, 2);
+                            return choosingWeapon(20, 2);
                         }
                         case 'b': {
                             return choosingWeapon(30, 3);

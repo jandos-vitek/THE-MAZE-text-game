@@ -12,7 +12,7 @@ true;false;false;false;2;0;Je tu monstrum, zautoc na nej
 true;true;false;false;2;1;Je tu monstrum, zautoc na nej
 false;true;true;false;2;2;Tato mistnost je prazdna
 true;false;false;true;2;3;Tato mistnost je prazdna
-true;true;false;false;2;4;V teto mistnosti se nachazi nejaka postava, muzes si s ni promluvit
+true;true;false;false;2;4;V teto mistnosti se nachazi nejaka postava
 true;true;false;false;1;0;V teto mistnosti se nachazi modry klic
 false;true;false;false;1;1;Tato mistnost je prazdna, smerem na sever jsou fialove dvere
 true;false;true;false;1;2;Tady v te mistnosti musis vyresit hadanku, aby jsi prosel dal

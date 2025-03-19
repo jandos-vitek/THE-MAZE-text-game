@@ -5,9 +5,61 @@
    ██     ██   ██  ███████      ██      ██  ██   ██  ███████  ███████
 
 
+PRAVIDLA HRY
 
+PREDMETY
+- Truhla - Lze z ni ziskat ruzne predmety.
+- Klic - Odemyka dvere stejne barvy.
+- Neutralni postava - Muzete s ni komunikovat a ziskat z toho neco.
+- Dvere - Da se pres ne dostat jen s klicem stejne barvy.
+- Monstrum - Hrac s nim musi bojovat. Pokud prohraje, prijde o vsechny zivoty a hra konci.
+- Hadanka - Hrac musi vyresit hadanku nebo hlavolam, aby se dostal dal.
+- Studna - Doplni hraci zivoty na maximum.
 
-RULES
+PREDMETY A INVENTAR
+Hrac muze sbirat predmety a spravovat svuj inventar.
+
+ZBRANE
+Zbrane lze ziskat z truhel nebo od neutralnich postav. Hrac muze mit pouze jednu zbran.
+
+- Nuz - Prida 10 bodu do utoku.
+- Dyka - Prida 20 bodu do utoku.
+- Sekera - Prida 30 bodu do utoku.
+- Mec - Prida 35 bodu do utoku.
+
+OSTATNI PREDMETY
+- Magicke houbicky - Lze je pouzit na leceni nebo magicky utok.
+- Penize - Mohou byt pouzity pri interakci s neutralni postavou. Daji se ziskat z truhel nebo zabijenim monster.
+
+HERNI MECHANIKY
+
+INTERAKCE S POSTAVAMI
+- Hrac vybira odpoved z moznosti A, B, C.
+- Od postav lze neco koupit nebo je presvedcit, aby hrace pustily dal.
+
+BOJ S MONSTRY
+Pri boji si hrac vybere jednu ze tri akci:
+
+1. NORMALNI UTOK
+   - Poskozeni hrace = hodnota zbrane + nahodne cislo od 0 do jeho stesti.
+   - Monstrum vraci utok → jeho poskozeni = jeho utok + nahodne cislo od 0 do jeho stesti.
+
+2. MAGICKY UTOK (vyzaduje magickou houbicku)
+   - Poskozeni hrace = nahodne cislo od 0 do (2 × jeho stesti).
+   - Monstrum vraci utok.
+
+3. LECENI (vyzaduje magickou houbicku)
+   - Hrac se vyleci o nahodne cislo od 0 do (2 × jeho stesti).
+   - Monstrum vraci utok.
+
+- Hrac zacina se 100 zivoty.
+- Boj trva, dokud jeden z bojujicich nezemre.
+- Pokud hrac zemre → hra konci.
+
+POHYB
+- Hrac se muze pohybovat na sever, jih, vychod a zapad. Diagonalni pohyb neni mozny.
+- Nektere mistnosti jsou nepristupne bez klice nebo jine podminky.
+- Je mozne se dostat do vsech mistnosti.
 
 
 
