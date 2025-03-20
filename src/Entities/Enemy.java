@@ -38,15 +38,13 @@ public class Enemy extends Entity {
                     System.out.println("boj zacina");
                     return fight();
                 }
-                if (!player.agree()) {
-                    return "rozhodl ses neutocit ☹\uFE0F☹\uFE0F☹\uFE0F";
-                } else return "tenhle prikaz neexistuje";
+                    return "rozhodl ses neutocit ☹\uFE0F☹\uFE0F☹\uFE0F\n─────────────────────────────";
             } else {
                 System.out.println("boj zacina");
                 return fight();
             }
         }
-        return "uz je mrtvej  ☠\uFE0F☠\uFE0F☠\uFE0F☠\uFE0F";
+        return "uz je mrtvej  ☠\uFE0F☠\uFE0F☠\uFE0F☠\uFE0F\n─────────────────────────────";
     }
 
 
@@ -56,9 +54,9 @@ public class Enemy extends Entity {
         }
         if (this.health <= 0) {
             setAlive(false);
-            return "Vyhral jsi 🎉✨✨🎉🎉";
+            return "Vyhral jsi 🎉✨✨🎉🎉\n─────────────────────────────";
         } else if (player.getHealth() <= 0) {
-            return "Byl jsi porazen 😵";
+            return "Byl jsi porazen 😵\n─────────────────────────────";
         } else {
             return "Nečekaná chyba v souboji";
         }

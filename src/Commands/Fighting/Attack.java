@@ -21,7 +21,7 @@ public class Attack implements Command {
         enemy.setHealth(enemy.getHealth()-(player.getDamage()+ rd.nextInt(player.getluck())));
         if(enemy.getHealth()>0) {
             player.setHealth(player.getHealth()- enemy.getDamage()- rd.nextInt(enemy.getLuck()));
-            return "HP nepritele: " + enemy.getHealth() + "\n──────────────────────────────\n" + player.showStats();
+            return "HP nepritele: " + enemy.getHealth() + "\nTvoje HP: " + player.getHealth();
         }
         return "";
     }

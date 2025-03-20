@@ -14,8 +14,7 @@ public class Player {
 
     private char choise;
     private boolean agree;
-
-    public Player(int health, int damage, int numberOfCoins, int numberOfMushrooms, boolean hasBlueKey, boolean hasPurpleKey, boolean hasGreenKey,int luck) {
+      public Player(int health, int damage, int numberOfCoins, int numberOfMushrooms, boolean hasBlueKey, boolean hasPurpleKey, boolean hasGreenKey,int luck) {
         this.health = health;
         this.damage = damage;
         this.numberOfCoins = numberOfCoins;
@@ -31,7 +30,12 @@ public class Player {
     }
 
     public void setHealth(int health) {
-        this.health = health;
+        if(health<=100) {
+            this.health = health;
+        }
+        else {
+            this.health=100;
+        }
     }
 
     public int getluck() {
@@ -105,7 +109,9 @@ public class Player {
     public void setAgree(boolean agree) {
         this.agree = agree;
     }
-//endregion
+
+
+    //endregion
     public String showStats() {
         String keys = "";
         if (hasPurpleKey) {
@@ -117,9 +123,10 @@ public class Player {
         if (hasGreenKey) {
             keys += "zeleny klic";
         }
-        return "\nStav vasi postavy\n──────────────────────────────" +
+        return "STAV VASI POSTAVY\n" +
                 "\npocet zivotu: " + health +
                 "\ndamage: " + damage +
+                "\nstesti: "+luck+
                 "\npocet penez: " + numberOfCoins +
                 "\npocet magickych houbicek: " + numberOfMushrooms +
                 "\nklice: " + keys+"\n──────────────────────────────";

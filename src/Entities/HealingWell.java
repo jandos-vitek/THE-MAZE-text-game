@@ -12,6 +12,6 @@ public class HealingWell extends Entity{
     @Override
     public String play() {
         player.setHealth(100);
-        return "Nasel jsi studnu uzdraveni, tvoje zivoty jsou nyni na maximu";
+        return "Nasel jsi studnu uzdraveni, tvoje zivoty jsou nyni na maximu\n─────────────────────────────";
     }
 }

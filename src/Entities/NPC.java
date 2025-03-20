@@ -41,16 +41,16 @@ public class NPC extends Entity {
         commands.choosingOptions();
         switch (player.getChoise()) {
             case 'a': {
-                return speech.get(4);
+                return speech.get(4)+"\n─────────────────────────────";
             }
             case 'b': {
                 System.out.println(speech.get(5));
                 commands.agreeing();
                 if (player.agree()) {
                     player.setHealth(0);
-                    return speech.get(7);
+                    return speech.get(7)+"\n─────────────────────────────";
                 }
-                return speech.get(6);
+                return speech.get(6)+"\n─────────────────────────────";
             }
             case 'c': {
                 System.out.println(speech.get(8));
@@ -72,23 +72,23 @@ public class NPC extends Entity {
                                 if (player.agree()) {
                                     if (player.getNumberOfMushrooms() > 1) {
                                         player.setNumberOfMushrooms(player.getNumberOfMushrooms()-1);
-                                        return speech.get(21);
+                                        return speech.get(21)+"\n─────────────────────────────";
                                     }
-                                    return speech.get(23);
+                                    return speech.get(23)+"\n─────────────────────────────";
                                 }
-                                return speech.get(22);
+                                return speech.get(22)+"\n─────────────────────────────";
                             case 'b':
-                                return speech.get(19);
+                                return speech.get(19)+"\n─────────────────────────────";
                             case 'c':
-                                return speech.get(20);
+                                return speech.get(20)+"\n─────────────────────────────";
                         }
                     }
                     case 'b': {
-                        return speech.get(13);
+                        return speech.get(13)+"\n─────────────────────────────";
 
                     }
                     case 'c': {
-                        return speech.get(14);
+                        return speech.get(14)+"\n─────────────────────────────";
                     }
 
                 }

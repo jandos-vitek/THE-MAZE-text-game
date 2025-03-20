@@ -18,15 +18,15 @@ public class Key extends Entity{
             switch (typeOfKey) {
                 case BLUE -> {
                     player.setHasBlueKey(true);
-                    return "Nasel jsi modry klic";
+                    return "Nasel jsi modry klic\n─────────────────────────────";
                 }
                 case PURPLE -> {
                     player.setHasPurpleKey(true);
-                    return "Nasel jsi fialovy klic";
+                    return "Nasel jsi fialovy klic\n─────────────────────────────";
                 }
                 case GREEN -> {
                     player.setHasGreenKey(true);
-                    return "Nasel jsi zeleny klic";
+                    return "Nasel jsi zeleny klic\n─────────────────────────────";
                 }
             }
         }else {

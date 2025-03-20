@@ -22,7 +22,7 @@ public class UsingSpell implements Command {
             player.setNumberOfMushrooms(player.getNumberOfMushrooms()-1);
             if(enemy.getHealth()>0) {
                 player.setHealth(player.getHealth()-enemy.getDamage()- rd.nextInt(enemy.getLuck()));
-                return "HP nepritele: " + enemy.getHealth() + "\n──────────────────────────────\n" + player.showStats();
+                return "HP nepritele: " + enemy.getHealth() + "\nTvoje HP: " + player.getHealth();
             }
         }
         else {

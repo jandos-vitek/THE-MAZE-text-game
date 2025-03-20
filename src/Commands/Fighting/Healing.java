@@ -23,9 +23,9 @@ public class Healing implements Command {
             player.setNumberOfMushrooms(player.getNumberOfMushrooms()-1);
             if(enemy!=null&&enemy.getHealth()>0){
                 player.setHealth(player.getHealth()- enemy.getDamage()- rd.nextInt(enemy.getLuck()));
-                return "Vylecil ses\nHP nepritele: " + enemy.getHealth() + "\n──────────────────────────────\n" + player.showStats();
+                return "Vylecil ses\nHP nepritele: " + enemy.getHealth() + "\nTvoje HP: " + player.getHealth();
             }
-            return "Vylecil ses"+ "\n──────────────────────────────\n" + player.showStats();
+            return "Vylecil ses"+ "\nTvoje HP: " + player.getHealth();
         }else {
             return "Nemuzes se healovat, protoze nemas zadny magicky houby";
         }
