@@ -161,6 +161,6 @@ public class Trader extends Entity {
                     return speech.get(14) + "\n─────────────────────────────";
                 }
         }
-        return "papapap";
+        return "";
     }
 }

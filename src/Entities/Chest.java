@@ -29,9 +29,9 @@ public class Chest extends Entity {
                 }
                 case DAGGER -> {
                     if (player.getDamage() < 20) {
-                        player.setDamage(20);
+                        player.setDamage(25);
                     }
-                    return "Nasel jsi dyku, damage se ti zvysil na 20";
+                    return "Nasel jsi dyku, damage se ti zvysil na 25";
                 }
                 case AXE -> {
                     if (player.getDamage() < 30) {
