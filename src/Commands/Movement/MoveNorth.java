@@ -14,8 +14,7 @@ public class MoveNorth implements Command {
     /**
      * It checks if it is possible to go north from the room where you are right now
      * If yes it subtracts 1 from your y coordinates, that makes you move
-     * @return If you moved it returns your coordinates and description of the room you just moved to
-     * If you tried to move and it wasn't possible it says that you can't go north
+     * @return If you moved it returns your coordinates and description of the room you just moved to. If you tried to move and it wasn't possible it says that you can't go north
      */
     @Override
     public String execute() {

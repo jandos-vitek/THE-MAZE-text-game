@@ -13,8 +13,7 @@ public class MoveWest implements Command {
     /**
      * It checks if it is possible to go east from the room where you are right now
      * If yes it subtracts one from your x coordinates, that makes you move
-     * @return If you moved it returns your coordinates and description of the room you just moved to
-     * If you tried to move and it wasn't possible it says that you can't go west
+     * @return If you moved it returns your coordinates and description of the room you just moved to. If you tried to move and it wasn't possible it says that you can't go west
      */
     @Override
     public String execute() {

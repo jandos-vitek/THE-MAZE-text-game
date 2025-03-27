@@ -36,7 +36,7 @@ public class Commands {
     }
 
     /**
-     * This creates and adds all of the commands to HashMap
+     * This creates and adds all the commands to HashMap
      */
     public void initialize() {
         commands.put("jdi sever", new MoveNorth(map));
@@ -56,6 +56,13 @@ public class Commands {
         commands.put("vybava", new ShowStats(player));
     }
 
+    /**
+     * You write a command, then it finds out if the command exist and is possible to use right now
+     * If it exists and you can use it, it starts the execute() method in the command
+     * If the command starts with jdi it will set boolean  didPlayerMove to true
+     * It sets the boolean exit based on what a given's commands end() method returns
+     * If the given command doesn't exist or cannot be used it starts the method repeats itself
+     */
     public void executing() {
         System.out.println(">>");
         String command = sc.nextLine().toLowerCase();
@@ -86,7 +93,12 @@ public class Commands {
     public boolean didPlayerMove() {
         return didPlayerMove;
     }
-
+    /**
+     * You write a command, then it finds out if the command exist and is possible to use right now
+     * If it exists and you can use it, it starts the execute() method in the command
+     * It sets the boolean exit based on what a given's commands end() method returns
+     * If the given command doesn't exist or cannot be used it starts the method repeats itself
+     */
     public void choosingOptions() {
         System.out.println(">>");
         String command = sc.nextLine().toLowerCase();
@@ -104,7 +116,12 @@ public class Commands {
         }
     }
 
-
+    /**
+     * You write a command, then it finds out if the command exist and is possible to use right now
+     * If it exists and you can use it, it starts the execute() method in the command
+     * It sets the boolean exit based on what a given's commands end() method returns
+     * If the given command doesn't exist or cannot be used it starts the method repeats itself
+     */
     public void agreeing() {
         System.out.println(">>");
         String command = sc.nextLine().toLowerCase();
@@ -122,7 +139,12 @@ public class Commands {
         }
     }
 
-
+    /**
+     * You write a command, then it finds out if the command exist and is possible to use right now
+     * If it exists and you can use it, it starts the execute() method in the command
+     * It sets the boolean exit based on what a given's commands end() method returns
+     * If the given command doesn't exist or cannot be used it starts the method repeats itself
+     */
     public void fighting() {
         System.out.println(">>");
         String command = sc.nextLine().toLowerCase();

@@ -1,10 +1,8 @@
 package Entities;
 
 import Commands.Commands;
-import Others.MapOfRooms;
 import Others.Player;
 
-import java.util.Random;
 
 public class Enemy extends Entity {
     private int health;

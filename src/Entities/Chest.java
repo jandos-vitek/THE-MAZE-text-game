@@ -12,10 +12,11 @@ public class Chest extends Entity {
         this.player=p;
         isEmpty=false;
     }
-    public void setContentsOfChest(ContentsOfChest contentsOfChest) {
-        this.contentsOfChest = contentsOfChest;
-    }
 
+    /**
+     * This method changes the player's damage, number of mushrooms or coins based on what is the content of the chest
+     * @return message about what it did to the player
+     */
     @Override
     public String play() {
         if (!isEmpty) {

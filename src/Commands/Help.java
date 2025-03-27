@@ -10,7 +10,11 @@ public class Help implements Command {
     String line="";
     String text="";
 
-public String reading() {
+    /**
+     * This method reads text file called ListOfCommands
+     * @return text from ListOfCommands
+     */
+    public String reading() {
     try (BufferedReader br = new BufferedReader(new FileReader("ListOfCommands"))) {
         while ((line = br.readLine()) != null) {
             text+=line+"\n";

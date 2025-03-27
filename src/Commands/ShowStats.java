@@ -9,6 +9,10 @@ public class ShowStats implements Command{
         this.player = p;
     }
 
+    /**
+     * It shows player's stats
+     * @return player's stats
+     */
     @Override
     public String execute() {
         return player.showStats();
