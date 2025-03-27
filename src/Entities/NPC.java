@@ -39,7 +39,7 @@ public class NPC extends Entity {
         System.out.println(speech.get(2));
         System.out.println(speech.get(3));
         commands.choosingOptions();
-        switch (player.getChoise()) {
+        switch (player.getChoice()) {
             case 'a': {
                 return speech.get(4)+"\n─────────────────────────────";
             }
@@ -58,14 +58,14 @@ public class NPC extends Entity {
                 System.out.println(speech.get(10));
                 System.out.println(speech.get(11));
                 commands.choosingOptions();
-                switch (player.getChoise()) {
+                switch (player.getChoice()) {
                     case 'a': {
                         System.out.println(speech.get(12));
                         System.out.println(speech.get(15));
                         System.out.println(speech.get(16));
                         System.out.println(speech.get(17));
                         commands.choosingOptions();
-                        switch (player.getChoise()) {
+                        switch (player.getChoice()) {
                             case 'a':
                                 System.out.println(speech.get(18));
                                 commands.agreeing();

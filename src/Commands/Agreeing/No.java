@@ -10,6 +10,10 @@ public class No implements Command {
         this.player = p;
     }
 
+    /**
+     * This method makes the player disagree
+     * @return message that he chose to disagree
+     */
     @Override
     public String execute() {
         player.setAgree(false);

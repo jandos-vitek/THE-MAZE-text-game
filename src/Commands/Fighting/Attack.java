@@ -16,6 +16,11 @@ public class Attack implements Command {
         this.player=p;
     }
 
+    /**
+     * This method lowers the enemy's health according to rules of fighting
+     * If the enemy is still alive it fights back
+     * @return information about your and the enemy's health or if the enemy is dead it returns empty String
+     */
     @Override
     public String execute() {
         enemy.setHealth(enemy.getHealth()-(player.getDamage()+ rd.nextInt(player.getluck())));

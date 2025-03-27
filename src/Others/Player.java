@@ -12,7 +12,7 @@ public class Player {
     private boolean hasPurpleKey;
     private boolean hasGreenKey;
 
-    private char choise;
+    private char choice;
     private boolean agree;
       public Player(int health, int damage, int numberOfCoins, int numberOfMushrooms, boolean hasBlueKey, boolean hasPurpleKey, boolean hasGreenKey,int luck) {
         this.health = health;
@@ -30,11 +30,14 @@ public class Player {
     }
 
     public void setHealth(int health) {
-        if(health<=100) {
-            this.health = health;
+        if(health>100) {
+            this.health = 100;
+        }
+        if(health<0) {
+            this.health = 0;
         }
         else {
-            this.health=100;
+            this.health=health;
         }
     }
 
@@ -94,12 +97,12 @@ public class Player {
         this.hasGreenKey = hasGreenKey;
     }
 
-    public void setChoise(char choise) {
-        this.choise = choise;
+    public void setChoice(char choise) {
+        this.choice = choise;
     }
 
-    public char getChoise() {
-        return choise;
+    public char getChoice() {
+        return choice;
     }
 
     public boolean agree() {

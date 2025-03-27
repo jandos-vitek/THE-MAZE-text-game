@@ -15,7 +15,11 @@ public class Healing implements Command {
         this.player=p;
         this.enemy=e;
     }
-
+    /**
+     * It checks if you have enough magic mushrooms to use healing
+     * If you can it heals the player and takes away one of your magic mushrooms
+     * @return information about your health and if the enemy isn't null also about enemy's health. Or if you can't heal right now it returns a message that you cant heal
+     */
     @Override
     public String execute() {
         if(player.getNumberOfMushrooms()>0) {

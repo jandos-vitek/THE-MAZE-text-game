@@ -59,14 +59,14 @@ public class Trader extends Entity {
         System.out.println(speech.get(4));
         System.out.println(speech.get(5));
         commands.choosingOptions();
-        switch (player.getChoise()) {
+        switch (player.getChoice()) {
             case 'a':
                 System.out.println(speech.get(6));
                 System.out.println(speech.get(7));
                 System.out.println(speech.get(8));
                 System.out.println(speech.get(9));
                 commands.choosingOptions();
-                switch (player.getChoise()) {
+                switch (player.getChoice()) {
                     case 'a': {
                         System.out.println(speech.get(12));
                         commands.agreeing();

@@ -11,7 +11,10 @@ public class Yes implements Command {
     public Yes(Player p) {
         this.player = p;
     }
-
+    /**
+     * This method makes the player agree
+     * @return message that he chose to agree
+     */
     @Override
     public String execute() {
         player.setAgree(true);

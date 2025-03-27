@@ -9,10 +9,13 @@ public class OptionC implements Command {
     public OptionC(Player p) {
         this.player = p;
     }
-
+    /**
+     * This method sets the players choice to c
+     * @return message that he chose c
+     */
     @Override
     public String execute() {
-        player.setChoise('c');
+        player.setChoice('c');
         return "Vybral sis moznost C";
     }
 

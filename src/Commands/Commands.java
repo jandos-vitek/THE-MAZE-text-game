@@ -35,6 +35,9 @@ public class Commands {
         initialize();
     }
 
+    /**
+     * This creates and adds all of the commands to HashMap
+     */
     public void initialize() {
         commands.put("jdi sever", new MoveNorth(map));
         commands.put("jdi jih", new MoveSouth(map));
@@ -55,10 +58,10 @@ public class Commands {
 
     public void executing() {
         System.out.println(">>");
-        String command = sc.nextLine();
+        String command = sc.nextLine().toLowerCase();
         if (commands.containsKey(command)) {
-            if (command.startsWith("jdi") || command.equalsIgnoreCase("konec") || command.equalsIgnoreCase("pomoc")
-                    || command.equalsIgnoreCase("vybava") || command.equalsIgnoreCase("leceni")) {
+            if (command.startsWith("jdi") || command.equals("konec") || command.equals("pomoc")
+                    || command.equals("vybava") || command.equals("leceni")) {
                 if (command.startsWith("jdi")) {
                     didPlayerMove = true;
                 } else {
@@ -122,10 +125,10 @@ public class Commands {
 
     public void fighting() {
         System.out.println(">>");
-        String command = sc.nextLine();
+        String command = sc.nextLine().toLowerCase();
         if (commands.containsKey(command)) {
-            if (command.equalsIgnoreCase("utok") || command.equalsIgnoreCase("kouzlo") || command.equalsIgnoreCase("leceni")
-                    || command.equalsIgnoreCase("konec") || command.equalsIgnoreCase("pomoc")) {
+            if (command.equals("utok") || command.equals("kouzlo") || command.equals("leceni")
+                    || command.equals("konec") || command.equals("pomoc")|| command.equals("vybava")) {
                 System.out.println(commands.get(command).execute());
                 exit = commands.get(command).end();
             } else {

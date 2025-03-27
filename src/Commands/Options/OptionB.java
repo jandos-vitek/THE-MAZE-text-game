@@ -9,10 +9,13 @@ public class OptionB implements Command {
     public OptionB(Player p) {
         this.player = p;
     }
-
+    /**
+     * This method sets the players choice to b
+     * @return message that he chose b
+     */
     @Override
     public String execute() {
-        player.setChoise('b');
+        player.setChoice('b');
         return "Vybral sis moznost B";
             }
 

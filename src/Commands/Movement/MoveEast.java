@@ -13,6 +13,13 @@ public class MoveEast implements Command {
         this.map = m;
     }
 
+    /**
+     * It checks if it is possible to go east from the room where you are right now
+     * And if you are on the coordinates y=0 x=4 it ends the program, because that means that you escaped
+     * If yes it adds 1 to your x coordinates, that makes you move
+     * @return If you moved it returns your coordinates and description of the room you just moved to
+     * If you tried to move and it wasn't possible it says that you can't go east
+     */
     @Override
     public String execute() {
         String description;
