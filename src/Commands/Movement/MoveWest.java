@@ -29,7 +29,7 @@ public class MoveWest implements Command {
         else{
             return "Nejde jit na zapad\n──────────────────────────────";
         }
-        return "Sel jsi na zapad\n──────────────────────────────\nnachazite se na souradnicich y="+map.getY()+"x="+" "+map.getX()+description;
+        return "Sel jsi na zapad\n──────────────────────────────\nnachazite se na souradnicich y= "+map.getY()+" x= "+" "+map.getX()+description;
     }
 
     @Override

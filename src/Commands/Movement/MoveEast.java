@@ -36,7 +36,7 @@ public class MoveEast implements Command {
         } else {
             return "nejde jit na vychod\n──────────────────────────────";
         }
-        return "sel jsi na vychod\n──────────────────────────────\n" + "nachazite se na souradnicich y=" + map.getY() + "x=" + map.getX() +" "+ description;
+        return "sel jsi na vychod\n──────────────────────────────\n" + "nachazite se na souradnicich y= " + map.getY() + " x= " + map.getX() +" "+ description;
     }
 
     @Override
