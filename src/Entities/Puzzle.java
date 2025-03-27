@@ -31,7 +31,7 @@ public class Puzzle extends Entity {
 
     @Override
     public String play() {
-        int index = rd.nextInt(7);
+        int index = rd.nextInt(8);
         String line = properties.get(index);
         String[] puzzle = line.split(";");
 
